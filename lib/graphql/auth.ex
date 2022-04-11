@@ -53,7 +53,8 @@ defmodule Bonfire.API.GraphQL.Auth do
                 current_account: account,
                 current_account_id: Map.get(account, :id),
                 current_user: user,
-                current_username: username(user)
+                current_username: username(user),
+                token: token_new({account.id, username})
               } ) }
       end
     else
